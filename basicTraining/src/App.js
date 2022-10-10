@@ -1,5 +1,19 @@
 import React, { useState, useRef } from 'react';
 
+const style = {
+  form: {
+    container: {
+
+    },
+    inputs: {
+
+    },
+    submitBtn: {
+
+    },
+  }
+}
+
 function PhoneBookForm({ addToPhoneBook }) {
   const userFirstName = useRef(null);
   const userLastName = useRef(null);
@@ -10,20 +24,32 @@ function PhoneBookForm({ addToPhoneBook }) {
   };
 
   return (
-    <form>
+    <form style={style.form.container}>
       <label>First Name:</label>
       <br />
-      <input />
+      <input 
+        style={style.form.inputs}
+        type="text" 
+      />
       <br />
       <label>Last Name:</label>
       <br />
-      <input />
+      <input
+        style={style.form.inputs}
+        type="text"  
+      />
       <br />
       <label>Phone:</label>
       <br />
-      <input />
+      <input
+        style={style.form.inputs}
+        type="text"  
+      />
       <br />
-      <button>Add User</button>
+      <input 
+        style={style.form.submitBtn} 
+        type="submit" 
+      />
     </form>
   );
 }
