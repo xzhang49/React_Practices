@@ -101,7 +101,15 @@ function InformationTable(props) {
         </tr>
       </thead>
       <tbody>
-
+        {props.phoneBook.length
+          ? props.phoneBook.map((phone,idx) => (
+            <tr key={idx}>
+              <th style={style.tableCell}>{phone.userFirstName}</th>
+              <th style={style.tableCell}>{phone.userLastName}</th>
+              <th style={style.tableCell}>{phone.userPhone}</th>
+            </tr>
+          ))
+          : 0}
       </tbody>
     </table>
   );
