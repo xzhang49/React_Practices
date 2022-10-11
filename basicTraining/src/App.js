@@ -28,36 +28,53 @@ function PhoneBookForm({ addToPhoneBook }) {
   const userLastName = useRef(null);
   const userPhone = useRef(null);
 
-  const formSubmitHandler = () => {
-
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+    const data = {
+      userFirstName: userFirstName.current.value,
+      userLastName: userLastName.current.value,
+      userPhone: userPhone.current.value
+    }
+    addToPhoneBook(data);
   };
 
   return (
-    <form style={style.form.container}>
+    <form onSubmit={formSubmitHandler} style={style.form.container}>
       <label>First Name:</label>
       <br />
       <input 
         style={style.form.inputs}
-        type="text" 
+        type="text"
+        className="userFirstName"
+        name="userFirstName"
+        ref={userFirstName} 
       />
       <br />
       <label>Last Name:</label>
       <br />
       <input
         style={style.form.inputs}
-        type="text"  
+        type="text"
+        className="userLastName"
+        name="userLastName"
+        ref={userLastName}  
       />
       <br />
       <label>Phone:</label>
       <br />
       <input
         style={style.form.inputs}
-        type="text"  
+        type="text"
+        className="userPhone"
+        name="userPhone"
+        ref={userPhone}  
       />
       <br />
       <input 
         style={style.form.submitBtn} 
-        type="submit" 
+        type="submit"
+        className="submitButton"
+        value="Add User"
       />
     </form>
   );
