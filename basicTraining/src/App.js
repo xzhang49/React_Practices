@@ -1,6 +1,16 @@
 import React, { useState, useRef } from 'react';
 
 const style = {
+  table: {
+    borderCollapse: 'collapse'
+  },
+  tableCell: {
+    border: '1px solid gray',
+    margin: 0,
+    padding: '5px 10px',
+    width: 'max-content',
+    minWidth: '150px',
+  },
   form: {
     container: {
       padding: '20px',
@@ -80,6 +90,23 @@ function PhoneBookForm({ addToPhoneBook }) {
   );
 }
 
+function InformationTable(props) {
+  return (
+    <table style={style.table} className="informationTable">
+      <thead>
+        <tr>
+          <th style={style.tableCell}>First Name</th>
+          <th style={style.tableCell}>Last Name</th>
+          <th style={style.tableCell}>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  );
+}
+
 function App() {
   //Add City
   const [cityName, setCityName] = useState("");
@@ -123,6 +150,7 @@ function App() {
 
       <section>
         <PhoneBookForm addToPhoneBook= {phoneBookHanlder} />
+        <InformationTable phoneBook={phoneBook} />
       </section>
     </div>
     
