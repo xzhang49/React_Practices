@@ -115,6 +115,28 @@ function InformationTable(props) {
   );
 }
 
+/**
+	1. Parse the string in the state value "mockParams" and set the form input values according to those params.
+	2. When one of the "set" buttons is clicked it will set a new value on "mockParams". This should update the form values.
+	3. Add whatever code is necessary to do this.
+**/
+
+const TextInput = () => {
+  return (
+    <div>
+
+    </div>
+  );
+};
+
+const Checkbox = () => {
+  return (
+    <div>
+
+    </div>
+  );
+};
+
 function App() {
   //Add City
   const [cityName, setCityName] = useState("");
@@ -143,6 +165,35 @@ function App() {
     setPhoneBook([...phoneBook, data]);
   };
 
+  const [dropDown, setSelectVal] = useState({
+    fruit: 'banana',
+    options: [
+      {
+        label: 'Apple',
+        value: 'apple',
+      },
+      {
+        label: 'Mango',
+        value: 'mango',
+      },
+      {
+        label: 'Banana',
+        value: 'banana',
+      },
+      {
+        label: 'Pineapple',
+        value: 'pineapple',
+      },
+    ],
+  });
+
+  const dropDownSelectHandler = (e) => {
+    setSelectVal({
+      ...dropDown,
+      fruit: e.target.value
+    });
+  };
+
   return (
     <div>
       <input value={cityName} onChange={cityNameHandler} />
@@ -160,6 +211,29 @@ function App() {
         <PhoneBookForm addToPhoneBook= {phoneBookHanlder} />
         <InformationTable phoneBook={phoneBook} />
       </section>
+
+      <br />
+      <br />
+      <br />
+      <div>
+        <div>{dropDown.fruit}</div>
+        <div>
+          <select 
+            value={dropDown.fruit} 
+            onChange={dropDownSelectHandler}
+          >
+            {dropDown.options.map((option) => (
+              <option value={option.value}>{option.label}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <div>
+        
+      </div>
     </div>
     
   );
