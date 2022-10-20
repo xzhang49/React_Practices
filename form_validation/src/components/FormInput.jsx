@@ -6,7 +6,7 @@ function FormInput(props) {
   return (
     <div className="formInput">
         {/* <label>UserName</label> */}
-        <input 
+        <input name={props.name}
             placeholder={props.placeholder}
         />
     </div>

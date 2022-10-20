@@ -8,16 +8,17 @@ function App() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const data = 
+    const data = new FormData(e.target);
+    console.log(data);
   }
 
   return (
     <div className="app">
       <form onSubmit={submitHandler}>
-        <FormInput placeholder="Username" />
-        <FormInput placeholder="Email"/>
-        <FormInput placeholder="Full Name"/>
-        <FormInput placeholder="Sth else"/>
+        <FormInput name="username" placeholder="Username" />
+        <FormInput name="email" placeholder="Email"/>
+        <FormInput name="fullname" placeholder="Full Name"/>
+        <FormInput name="sth" placeholder="Sth else"/>
         <button>Submit</button>
       </form>
     </div>
