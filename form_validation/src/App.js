@@ -48,19 +48,29 @@ function App() {
       placeholder: "Confirm Password",
       label: "Confirm Password"
     },
-  ]
+  ];
 
   const submitHandler = (e) => {
     e.preventDefault();
-  }
+  };
+
+  const onChange = (e) => {
+    setValues({...values, [e.target.name]: e.target.value});
+  };
+
+  console.log(values);
 
   return (
     <div className="app">
       <form onSubmit={submitHandler}>
-        <FormInput name="username" placeholder="Username" />
-        <FormInput name="email" placeholder="Email"/>
-        <FormInput name="fullname" placeholder="Full Name"/>
-        <FormInput name="sth" placeholder="Sth else"/>
+        {inputs.map((input) => (
+          <FormInput 
+            key={input.id} 
+            {...input} 
+            value={values[input.name]} 
+            onChange={onChange} 
+          />
+        ))}
         <button>Submit</button>
       </form>
     </div>
