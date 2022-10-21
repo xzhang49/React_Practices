@@ -1,15 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import FormInput from './components/FormInput';
 
 import "./app.css";
 
 function App() {
-  // const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const data = new FormData(e.target);
-    console.log(data);
   }
 
   return (
