@@ -62,6 +62,7 @@ function App() {
 
   return (
     <div className="app">
+      <h1>Register</h1>
       <form onSubmit={submitHandler}>
         {inputs.map((input) => (
           <FormInput 

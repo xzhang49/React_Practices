@@ -9,6 +9,7 @@ function FormInput(props) {
     <div className="formInput">
         <label>{label}</label>
         <input {...inputProps} onChange={onChange} />
+        <span>{errorMessage}</span>
     </div>
   )
 }
