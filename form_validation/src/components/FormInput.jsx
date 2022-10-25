@@ -3,7 +3,7 @@ import React from 'react';
 import "./formInput.css";
 
 function FormInput(props) {
-  const { label, onChange, id, ...inputProps } = props;
+  const { label, errorMessage, onChange, id, ...inputProps } = props;
 
   return (
     <div className="formInput">
