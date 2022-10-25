@@ -46,15 +46,17 @@ function App() {
       placeholder: "Password",
       errorMessage: "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
       label: "Password",
+      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
     },
     {
       id: 5,
       name: "confirmPassword",
-      type: "password",
+      type: "text",
       placeholder: "Confirm Password",
       errorMessage: "Passwords don't match!",
       label: "Confirm Password",
+      pattern: values.password,
       required: true,
     },
   ];
@@ -71,8 +73,8 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Register</h1>
       <form onSubmit={submitHandler}>
+        <h1>Register</h1>
         {inputs.map((input) => (
           <FormInput 
             key={input.id} 

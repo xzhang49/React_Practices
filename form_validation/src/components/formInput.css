@@ -1,4 +1,4 @@
-.forInput{
+.formInput{
     display: flex;
     flex-direction: column;
     width: 280px;
@@ -23,6 +23,10 @@ span{
     display: none;
 }
 
-input:invalid ~ span{
+input:invalid[focused="true"]{
+    border: 1px solid red;
+}
+
+input:invalid[focused="true"] ~ span{
     display: block;
 }
