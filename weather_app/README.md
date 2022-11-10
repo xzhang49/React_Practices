@@ -5,7 +5,6 @@ This project was a react application using React and Restful Api.
 
 In the project directory, you can run:
 
-### `cd weather_app`
 
 ### `npm install`
 
